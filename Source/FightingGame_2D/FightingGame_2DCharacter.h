@@ -52,7 +52,10 @@ protected:
     float maxStamina;
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Stamina")
     float currentStamina;
-
+    
+    // Properties for player attacks
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attacks")
+    bool wasLightAttackUsed;
 
 public:
 	AFightingGame_2DCharacter();

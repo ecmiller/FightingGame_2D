@@ -47,6 +47,8 @@ AFightingGame_2DCharacter::AFightingGame_2DCharacter()
     // Default values for health and stamina
     currentHealth = maxHealth = 100.0f;
     currentStamina = maxStamina = 100.0f;
+    
+    wasLightAttackUsed = false;
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -87,6 +89,7 @@ void AFightingGame_2DCharacter::TouchStopped(const ETouchIndex::Type FingerIndex
 void AFightingGame_2DCharacter::StartAttackLight()
 {
     UE_LOG(LogTemp, Warning, TEXT("Starting light attack"));
+    wasLightAttackUsed = true;
 }
 
 void AFightingGame_2DCharacter::StartAttackMedium()
@@ -104,7 +107,7 @@ void AFightingGame_2DCharacter::StartAttackHeavy()
 
 void AFightingGame_2DCharacter::DamageFighter(float damageValue)
 {
-    UE_LOG(LogTemp, Warning, TEXT("Taking %f damage"), damageValue);
+    UE_LOG(LogTemp, Warning, TEXT("Dealing   %f damage"), damageValue);
     
     currentHealth -= damageValue;
     
